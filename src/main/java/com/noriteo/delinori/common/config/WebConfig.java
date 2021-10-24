@@ -14,7 +14,7 @@ import javax.servlet.ServletRegistration;
 public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
-    protected Class<?>[] getRootConfigClasses() {//루트설정
+    protected Class<?>[] getRootConfigClasses() {
 
         log.info("1-----------------------");
         log.info("1-----------------------");
@@ -23,10 +23,10 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
     }
 
     @Override
-    protected Class<?>[] getServletConfigClasses() {//서블릿설정
+    protected Class<?>[] getServletConfigClasses() {
 
         log.info("2-----------------------");
-        log.info("2-----------------------");//정상적으로 설정이 완료되면 로그가 찍히는 것.
+        log.info("2-----------------------");
 
         return new Class[]{ServletConfig.class, SecurityServletConfig.class};
     }
@@ -36,7 +36,7 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
         return new String[]{"/"};
     }
 
-    @Override //한글처리
+    @Override
     protected Filter[] getServletFilters() {
         CharacterEncodingFilter utf8Filter = new CharacterEncodingFilter();
         utf8Filter.setEncoding("UTF-8");
